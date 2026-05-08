@@ -17,8 +17,6 @@
   body{background:#0c0c0c;color:var(--text);font-family:'Barlow',sans-serif;min-height:100vh;
     background-image:repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(255,255,255,.012) 40px,rgba(255,255,255,.012) 41px),
     repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(255,255,255,.012) 40px,rgba(255,255,255,.012) 41px);}
-
-  /* HEADER */
   header{background:linear-gradient(135deg,#0c0c0c 0%,#1a0808 40%,#0c0c0c 100%);border-bottom:3px solid var(--red);padding:16px 40px;display:flex;align-items:center;justify-content:space-between;gap:20px;position:relative;overflow:hidden;}
   header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 12px,rgba(200,16,46,.03) 12px,rgba(200,16,46,.03) 13px);}
   .header-logo{position:relative;height:88px;width:auto;filter:drop-shadow(0 2px 14px rgba(200,16,46,.3));}
@@ -27,7 +25,7 @@
   .header-title{font-family:'Black Han Sans',sans-serif;font-size:38px;letter-spacing:3px;text-transform:uppercase;color:var(--silver-bright);text-shadow:0 0 40px rgba(200,16,46,.4),2px 2px 0 rgba(0,0,0,.9);line-height:1;}
   .header-title span{color:var(--red);}
   .header-sub{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--silver);margin-top:4px;font-weight:300;}
-  .sync-badge{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:80px;position:relative;}
+  .sync-badge{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:80px;}
   .sync-dot{width:12px;height:12px;border-radius:50%;background:#555;box-shadow:0 0 0 3px rgba(85,85,85,.2);transition:all .4s;}
   .sync-dot.online{background:#27ae60;box-shadow:0 0 0 3px rgba(39,174,96,.25);}
   .sync-dot.syncing{background:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,.25);animation:blink .9s infinite;}
@@ -35,20 +33,14 @@
   @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
   .sync-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:600;}
   .sync-status-text{font-size:10px;color:var(--muted);text-align:center;max-width:90px;line-height:1.3;}
-
-  /* TABS */
   .tabs{display:flex;border-bottom:2px solid var(--border);background:var(--surface);padding:0 40px;}
   .tab{padding:15px 28px;cursor:pointer;font-weight:600;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;}
   .tab:hover{color:var(--text);}
   .tab.active{color:var(--red);border-bottom-color:var(--red);}
-
   .content{padding:40px;max-width:960px;margin:0 auto;}
-
-  /* PANELS */
+  .debug-box{background:#1a0808;border:1px solid var(--red);color:#ff9999;padding:14px 18px;font-size:12px;font-family:monospace;margin-bottom:20px;display:none;line-height:1.6;word-break:break-all;}
   .form-section,.records-section,.prize-section{display:none;}
   .form-section.active,.records-section.active,.prize-section.active{display:block;}
-
-  /* FORM */
   .form-card{background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--red);padding:40px;position:relative;}
   .form-card::after{content:'';position:absolute;top:0;right:0;width:70px;height:70px;background:linear-gradient(225deg,var(--red) 30%,transparent 30%);opacity:.1;}
   .stars{text-align:center;color:var(--red);font-size:16px;letter-spacing:12px;margin-bottom:28px;opacity:.7;}
@@ -65,8 +57,6 @@
   .notice{margin-top:16px;padding:13px 18px;font-size:12px;letter-spacing:1px;text-align:center;font-weight:600;display:none;}
   .notice.success{background:rgba(39,174,96,.1);border:1px solid #27ae60;color:#27ae60;}
   .notice.error{background:rgba(200,16,46,.1);border:1px solid var(--red);color:#ff6b6b;}
-
-  /* RECORDS */
   .records-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;flex-wrap:wrap;gap:12px;}
   .records-count{font-family:'Black Han Sans',sans-serif;font-size:34px;color:var(--red);line-height:1;}
   .records-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);}
@@ -92,8 +82,6 @@
   .empty-state{text-align:center;padding:70px 20px;color:var(--muted);}
   .empty-icon{font-size:52px;margin-bottom:16px;opacity:.25;}
   .empty-state p{font-size:12px;letter-spacing:3px;text-transform:uppercase;}
-
-  /* DOOR PRIZE */
   .prize-card{background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--gold);padding:40px;text-align:center;position:relative;overflow:hidden;}
   .prize-card::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 14px,rgba(201,168,76,.025) 14px,rgba(201,168,76,.025) 15px);}
   .prize-title{position:relative;font-family:'Black Han Sans',sans-serif;font-size:14px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
@@ -132,19 +120,12 @@
   .winner-row-time{font-size:11px;color:#555;}
   .btn-rmv{background:none;border:none;color:#444;cursor:pointer;font-size:14px;padding:2px 6px;transition:color .2s;}
   .btn-rmv:hover{color:var(--red);}
-
   @media(max-width:640px){
     header{padding:14px 20px;flex-wrap:wrap;}
-    .header-logo{height:58px;}
-    .header-title{font-size:24px;}
-    .content{padding:20px;}
-    .form-grid{grid-template-columns:1fr;}
+    .header-logo{height:58px;} .header-title{font-size:24px;}
+    .content{padding:20px;} .form-grid{grid-template-columns:1fr;}
     .form-card,.prize-card{padding:22px;}
-    .tabs{padding:0 10px;}
-    .tab{padding:12px 10px;font-size:10px;}
-    .drum-name{font-size:24px;}
-    .winner-name{font-size:26px;}
-    .btn-spin{font-size:14px;padding:16px 28px;}
+    .tabs{padding:0 10px;} .tab{padding:12px 10px;font-size:10px;}
   }
 </style>
 </head>
@@ -171,8 +152,9 @@
 </nav>
 
 <div class="content">
+  <!-- Debug box — shows errors if something goes wrong -->
+  <div class="debug-box" id="debugBox"></div>
 
-  <!-- SIGN-IN FORM -->
   <div class="form-section active" id="form-tab">
     <div class="form-card">
       <div class="stars">&#9733; &#9733; &#9733;</div>
@@ -188,7 +170,6 @@
     </div>
   </div>
 
-  <!-- ATTENDEES -->
   <div class="records-section" id="records-tab">
     <div class="records-header">
       <div><div class="records-count" id="count">0</div><div class="records-label">Registered Attendees</div></div>
@@ -202,12 +183,11 @@
     <div id="table-wrap"><div class="empty-state"><div class="empty-icon">&#127950;</div><p>Loading...</p></div></div>
   </div>
 
-  <!-- DOOR PRIZE -->
   <div class="prize-section" id="prize-tab">
     <div class="prize-card">
       <div class="prize-title">&#127881; Door Prize Draw &#127881;</div>
       <div class="prize-subtitle">Randomly select a winner from registered attendees</div>
-      <div class="drum-wrap" id="drumWrap">
+      <div class="drum-wrap">
         <div class="drum-idle" id="drumIdle">Press Draw to spin the wheel</div>
         <div class="drum-name" id="drumName"></div>
         <div class="drum-car"  id="drumCar"></div>
@@ -231,91 +211,77 @@
       </div>
     </div>
   </div>
-
 </div>
 
 <script>
-// ── JSONBin Config ──────────────────────────────────────
-const API_KEY  =  + API_KEY + ;
-const BIN_NAME = 'harlan-carshow';
-const BASE_URL = 'https://api.jsonbin.io/v3';
-let BIN_ID = localStorage.getItem('harlan_bin_id') || null;
+const API_KEY = "$2a$10$IzDOg3eDQ4FysYvGbgCDpuOsFleoWtB9aFFicMM5GqMuWaecMm.L.";
+const BIN_ID  = "69fd5081250b1311c31cfa16";
 
-// ── State ───────────────────────────────────────────────
 let entries = [];
-let winners = JSON.parse(localStorage.getItem('harlan_prize_winners') || '[]');
+let winners = JSON.parse(localStorage.getItem('harlan_winners') || '[]');
 let excludeWinners = false;
 let spinning = false;
 let pollInterval = null;
 
-// ── Sync UI ─────────────────────────────────────────────
-function setSyncStatus(status, text) {
-  document.getElementById('syncDot').className = 'sync-dot ' + status;
-  document.getElementById('syncText').textContent = text || '';
+// ── Debug helper ─────────────────────────────────────────
+function showDebug(msg) {
+  const box = document.getElementById('debugBox');
+  box.style.display = 'block';
+  box.innerHTML = '&#9888; ' + msg;
+}
+function hideDebug() {
+  document.getElementById('debugBox').style.display = 'none';
 }
 
-// ── JSONBin API ─────────────────────────────────────────
+// ── Sync UI ──────────────────────────────────────────────
+function setSyncStatus(s, t) {
+  document.getElementById('syncDot').className = 'sync-dot ' + s;
+  document.getElementById('syncText').textContent = t || '';
+}
+
+// ── JSONBin helpers ──────────────────────────────────────
+// Read the bin — handle ANY structure JSONBin might return
 async function binGet() {
-  if (!BIN_ID) return null;
-  const r = await fetch(`${BASE_URL}/b/${BIN_ID}/latest`, {
+  const r = await fetch('https://api.jsonbin.io/v3/b/' + BIN_ID + '/latest', {
     headers: { 'X-Master-Key': API_KEY }
   });
-  if (!r.ok) throw new Error('GET failed');
-  const j = await r.json();
-  return j.record;
+  const text = await r.text();
+  if (!r.ok) throw new Error('Read failed (' + r.status + '): ' + text.slice(0,200));
+  const j = JSON.parse(text);
+  // JSONBin wraps response in j.record — extract entries array defensively
+  const rec = j.record;
+  if (Array.isArray(rec)) return rec;                        // stored as bare array
+  if (rec && Array.isArray(rec.entries)) return rec.entries; // stored as {entries:[]}
+  return [];                                                  // empty / unknown shape
 }
 
-async function binSet(data) {
-  if (!BIN_ID) {
-    // Create bin on first use
-    const r = await fetch(`${BASE_URL}/b`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'X-Master-Key': API_KEY, 'X-Bin-Name': BIN_NAME, 'X-Bin-Private': 'true' },
-      body: JSON.stringify(data)
-    });
-    if (!r.ok) throw new Error('Create failed');
-    const j = await r.json();
-    BIN_ID = j.metadata.id;
-    localStorage.setItem('harlan_bin_id', BIN_ID);
-    return true;
-  }
-  const r = await fetch(`${BASE_URL}/b/${BIN_ID}`, {
+// Write entries array to bin
+async function binSet(arr) {
+  const r = await fetch('https://api.jsonbin.io/v3/b/' + BIN_ID, {
     method: 'PUT',
-    headers: { 'Content-Type': 'application/json', 'X-Master-Key': API_KEY },
-    body: JSON.stringify(data)
+    headers: { 'X-Master-Key': API_KEY, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ entries: arr })
   });
-  if (!r.ok) throw new Error('PUT failed');
-  return true;
+  const text = await r.text();
+  if (!r.ok) throw new Error('Write failed (' + r.status + '): ' + text.slice(0,200));
 }
 
-// ── Local fallback ──────────────────────────────────────
 function localLoad() { try { return JSON.parse(localStorage.getItem('harlan_local') || '[]'); } catch { return []; } }
 function localSave(d) { localStorage.setItem('harlan_local', JSON.stringify(d)); }
 
-// ── Init ────────────────────────────────────────────────
+// ── Init ─────────────────────────────────────────────────
 async function init() {
   setSyncStatus('syncing', 'Connecting...');
   try {
-    const data = await binGet();
-    entries = (data && data.entries) ? data.entries : [];
-    setSyncStatus('online', 'Live sync on');
+    entries = await binGet();
     localSave(entries);
-    if (!data) await binSet({ entries: [] }); // first-time setup
+    setSyncStatus('online', 'Live sync on');
+    hideDebug();
     startPolling();
   } catch(e) {
-    if (!BIN_ID) {
-      // Try creating the bin fresh
-      try {
-        await binSet({ entries: [] });
-        entries = [];
-        setSyncStatus('online', 'Ready');
-        startPolling();
-        return;
-      } catch {}
-    }
     entries = localLoad();
     setSyncStatus('error', 'Check internet');
-    console.error('Init error:', e);
+    showDebug('Could not reach JSONBin: ' + e.message + '<br>Working in offline mode — entries will save locally.');
   }
 }
 
@@ -323,19 +289,21 @@ function startPolling() {
   if (pollInterval) clearInterval(pollInterval);
   pollInterval = setInterval(async () => {
     try {
-      const data = await binGet();
-      const fresh = (data && data.entries) ? data.entries : [];
+      const fresh = await binGet();
       if (JSON.stringify(fresh) !== JSON.stringify(entries)) {
         entries = fresh; localSave(entries);
         if (document.getElementById('records-tab').classList.contains('active')) renderTable();
         document.getElementById('count').textContent = entries.length;
       }
       setSyncStatus('online', 'Live sync on');
-    } catch { setSyncStatus('error', 'Sync lost'); }
-  }, 10000);
+      hideDebug();
+    } catch(e) {
+      setSyncStatus('error', 'Sync lost');
+    }
+  }, 8000);
 }
 
-// ── Submit ──────────────────────────────────────────────
+// ── Submit ───────────────────────────────────────────────
 async function submitEntry() {
   const name  = document.getElementById('iname').value.trim();
   const car   = document.getElementById('icar').value.trim();
@@ -345,23 +313,27 @@ async function submitEntry() {
 
   const btn = document.getElementById('submitBtn');
   btn.disabled = true; btn.textContent = 'Saving...';
-
   const entry = { id: Date.now(), name, car, phone, email, time: new Date().toLocaleString() };
+
   try {
     setSyncStatus('syncing', 'Saving...');
-    const data = await binGet();
-    const list = (data && data.entries) ? data.entries : [...entries];
-    list.push(entry);
-    await binSet({ entries: list });
-    entries = list; localSave(entries);
+    // Always fetch latest before appending to avoid overwriting other laptops' entries
+    let latest = [];
+    try { latest = await binGet(); } catch { latest = [...entries]; }
+    latest.push(entry);
+    await binSet(latest);
+    entries = latest; localSave(entries);
     setSyncStatus('online', 'Live sync on');
+    hideDebug();
     clearForm();
     showNotice('success', '&#10003;&nbsp; Registration complete! Welcome to the show.');
   } catch(e) {
+    // Save locally as fallback — entry is NOT lost
     entries.push(entry); localSave(entries);
     setSyncStatus('error', 'Saved locally');
+    showDebug('Cloud save failed: ' + e.message + '<br>Entry saved locally on this laptop.');
     clearForm();
-    showNotice('success', '&#10003;&nbsp; Saved locally (will sync when reconnected).');
+    showNotice('success', '&#10003;&nbsp; Saved locally (cloud sync failed).');
   } finally {
     btn.disabled = false; btn.innerHTML = '&#10003;&nbsp;&nbsp;Sign In';
   }
@@ -373,152 +345,136 @@ function clearForm() {
 }
 function showNotice(type, msg) {
   const el = document.getElementById(type==='success' ? 'successMsg' : 'errorMsg');
-  const other = document.getElementById(type==='success' ? 'errorMsg' : 'successMsg');
-  other.style.display='none'; el.innerHTML=msg; el.style.display='block';
-  setTimeout(() => el.style.display='none', 4000);
+  const ot = document.getElementById(type==='success' ? 'errorMsg' : 'successMsg');
+  ot.style.display='none'; el.innerHTML=msg; el.style.display='block';
+  setTimeout(()=>el.style.display='none', 4500);
 }
 
 // ── Tabs ─────────────────────────────────────────────────
 function switchTab(tab) {
-  document.querySelectorAll('.tab').forEach((t,i) => {
-    t.classList.toggle('active',(i===0&&tab==='form')||(i===1&&tab==='records')||(i===2&&tab==='prize'));
-  });
-  ['form','records','prize'].forEach(id => {
-    document.getElementById(id+'-tab').classList.toggle('active', id===tab);
-  });
-  if (tab==='records') renderTable();
-  if (tab==='prize') { updateExcludeNote(); renderWinnersLog(); }
+  document.querySelectorAll('.tab').forEach((t,i)=>
+    t.classList.toggle('active',(i===0&&tab==='form')||(i===1&&tab==='records')||(i===2&&tab==='prize')));
+  ['form','records','prize'].forEach(id=>
+    document.getElementById(id+'-tab').classList.toggle('active',id===tab));
+  if(tab==='records') renderTable();
+  if(tab==='prize'){ updateExcludeNote(); renderWinnersLog(); }
 }
 
 // ── Table ────────────────────────────────────────────────
 function renderTable() {
-  const q = (document.getElementById('search')?.value||'').toLowerCase();
-  const filtered = q ? entries.filter(e =>
+  const q=(document.getElementById('search')?.value||'').toLowerCase();
+  const filtered=q?entries.filter(e=>
     (e.name||'').toLowerCase().includes(q)||(e.car||'').toLowerCase().includes(q)||
-    (e.phone||'').toLowerCase().includes(q)||(e.email||'').toLowerCase().includes(q)) : entries;
-  document.getElementById('count').textContent = entries.length;
-  const wrap = document.getElementById('table-wrap');
-  if (!filtered.length) {
-    wrap.innerHTML = `<div class="empty-state"><div class="empty-icon">&#127950;</div><p>${entries.length?'No matches found':'No registrations yet'}</p></div>`;
+    (e.phone||'').toLowerCase().includes(q)||(e.email||'').toLowerCase().includes(q)):entries;
+  document.getElementById('count').textContent=entries.length;
+  const wrap=document.getElementById('table-wrap');
+  if(!filtered.length){
+    wrap.innerHTML=`<div class="empty-state"><div class="empty-icon">&#127950;</div><p>${entries.length?'No matches':'No registrations yet'}</p></div>`;
     return;
   }
-  const rows = [...filtered].reverse().map((e,i) => `
+  const rows=[...filtered].reverse().map((e,i)=>`
     <tr><td class="num">${filtered.length-i}</td><td>${esc(e.name)}</td>
     <td class="car-cell">${esc(e.car)}</td><td>${esc(e.phone)}</td>
     <td>${esc(e.email)}</td><td class="time-cell">${esc(e.time)}</td>
     <td><button class="btn-del" onclick="deleteEntry(${e.id})">&#10005;</button></td></tr>`).join('');
-  wrap.innerHTML = `<table><thead><tr><th>#</th><th>Name</th><th>Vehicle</th><th>Phone</th><th>Email</th><th>Time</th><th></th></tr></thead><tbody>${rows}</tbody></table>`;
+  wrap.innerHTML=`<table><thead><tr><th>#</th><th>Name</th><th>Vehicle</th><th>Phone</th><th>Email</th><th>Time</th><th></th></tr></thead><tbody>${rows}</tbody></table>`;
 }
 
 async function deleteEntry(id) {
-  if (!confirm('Remove this entry?')) return;
-  try {
-    const data = await binGet();
-    const list = (data && data.entries) ? data.entries.filter(e=>e.id!==id) : entries.filter(e=>e.id!==id);
-    await binSet({ entries: list }); entries = list; localSave(entries);
-  } catch { entries = entries.filter(e=>e.id!==id); localSave(entries); }
+  if(!confirm('Remove this entry?')) return;
+  try{
+    const latest=await binGet();
+    const updated=latest.filter(e=>e.id!==id);
+    await binSet(updated); entries=updated; localSave(entries);
+  }catch{ entries=entries.filter(e=>e.id!==id); localSave(entries); }
   renderTable();
 }
-
 async function clearAll() {
-  if (!confirm('Delete ALL registrations? This cannot be undone.')) return;
-  try { await binSet({ entries: [] }); } catch {}
-  entries = []; localSave([]); renderTable();
+  if(!confirm('Delete ALL registrations? This cannot be undone.')) return;
+  try{ await binSet([]); }catch{}
+  entries=[]; localSave([]); renderTable();
 }
-
 async function refreshRecords() {
-  setSyncStatus('syncing', 'Refreshing...');
-  try {
-    const data = await binGet();
-    entries = (data && data.entries) ? data.entries : [];
-    localSave(entries); setSyncStatus('online', 'Live sync on');
-  } catch { setSyncStatus('error', 'Check internet'); }
+  setSyncStatus('syncing','Refreshing...');
+  try{ entries=await binGet(); localSave(entries); setSyncStatus('online','Live sync on'); hideDebug(); }
+  catch(e){ setSyncStatus('error','Check internet'); showDebug('Refresh failed: '+e.message); }
   renderTable();
 }
-
 function exportCSV() {
-  if (!entries.length) { alert('No entries to export.'); return; }
+  if(!entries.length){alert('No entries to export.');return;}
   const h=['#','Name','Vehicle','Phone','Email','Registered'];
   const rows=entries.map((e,i)=>[i+1,e.name,e.car,e.phone,e.email,e.time].map(v=>`"${String(v||'').replace(/"/g,'""')}"`));
-  const csv=[h,...rows].map(r=>r.join(',')).join('\n');
-  const a=document.createElement('a'); a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv);
-  a.download=`harlan-carshow-${new Date().toISOString().slice(0,10)}.csv`; a.click();
+  const csv=[h,...rows].map(r=>r.join(',')).join('
+');
+  const a=document.createElement('a');
+  a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv);
+  a.download=`harlan-carshow-${new Date().toISOString().slice(0,10)}.csv`;
+  a.click();
 }
 
 // ── Door Prize ───────────────────────────────────────────
-function getPool() {
-  if (excludeWinners && winners.length) {
-    const ids = new Set(winners.map(w=>w.id));
-    return entries.filter(e=>!ids.has(e.id));
-  }
-  return [...entries];
+function getPool(){
+  if(excludeWinners&&winners.length){const ids=new Set(winners.map(w=>w.id));return entries.filter(e=>!ids.has(e.id));}
+  return[...entries];
 }
-
-function toggleExclude() {
-  excludeWinners = !excludeWinners;
-  const btn = document.getElementById('excludeBtn');
-  btn.textContent = 'Exclude prev. winners: ' + (excludeWinners ? 'ON' : 'OFF');
-  btn.style.borderColor = excludeWinners ? 'var(--gold)' : '';
-  btn.style.color = excludeWinners ? 'var(--gold)' : '';
+function toggleExclude(){
+  excludeWinners=!excludeWinners;
+  const btn=document.getElementById('excludeBtn');
+  btn.textContent='Exclude prev. winners: '+(excludeWinners?'ON':'OFF');
+  btn.style.borderColor=excludeWinners?'var(--gold)':'';
+  btn.style.color=excludeWinners?'var(--gold)':'';
   updateExcludeNote();
 }
-
-function updateExcludeNote() {
-  const pool = getPool();
-  const note = document.getElementById('excludeNote');
-  if (excludeWinners && winners.length)
-    note.textContent = `${pool.length} eligible attendee${pool.length!==1?'s':''} (${winners.length} previous winner${winners.length!==1?'s':''} excluded)`;
-  else
-    note.textContent = entries.length ? `${entries.length} attendee${entries.length!==1?'s':''} eligible` : '';
+function updateExcludeNote(){
+  const pool=getPool(),note=document.getElementById('excludeNote');
+  note.textContent=excludeWinners&&winners.length
+    ?`${pool.length} eligible (${winners.length} winner${winners.length!==1?'s':''} excluded)`
+    :entries.length?`${entries.length} attendee${entries.length!==1?'s':''} eligible`:'';
 }
-
-async function spinDraw() {
-  if (spinning) return;
-  try { const d=await binGet(); if(d&&d.entries) { entries=d.entries; localSave(entries); } } catch {}
-  const pool = getPool();
-  if (!pool.length) {
-    alert(entries.length===0 ? 'No attendees registered yet!' : 'All attendees have already won! Clear the winners list or disable exclusion.');
+async function spinDraw(){
+  if(spinning)return;
+  try{const fresh=await binGet();entries=fresh;localSave(entries);}catch{}
+  const pool=getPool();
+  if(!pool.length){
+    alert(entries.length===0?'No attendees registered yet!':'All attendees have already won! Clear the winners list or disable exclusion.');
     return;
   }
-  spinning = true;
-  document.getElementById('spinBtn').disabled = true;
-  const box = document.getElementById('winnerBox');
-  box.classList.remove('show'); box.style.display='none';
+  spinning=true;
+  document.getElementById('spinBtn').disabled=true;
+  const box=document.getElementById('winnerBox');
+  box.classList.remove('show');box.style.display='none';
   document.getElementById('drumIdle').style.display='none';
-  const dn = document.getElementById('drumName'); dn.style.display='block';
-  const dc = document.getElementById('drumCar');  dc.style.display='block';
-
-  let ticks=0, interval=60;
-  const total = 28 + Math.floor(Math.random()*14);
-  function tick() {
-    const p = pool[Math.floor(Math.random()*pool.length)];
-    dn.textContent = p.name.toUpperCase(); dc.textContent = p.car; ticks++;
-    if (ticks > total*.6) interval = Math.min(interval+18, 380);
-    if (ticks > total*.85) interval = Math.min(interval+28, 680);
-    if (ticks >= total) {
-      const winner = pool[Math.floor(Math.random()*pool.length)];
-      dn.textContent = winner.name.toUpperCase(); dc.textContent = winner.car;
-      setTimeout(() => revealWinner(winner), 600);
-    } else { setTimeout(tick, interval); }
+  const dn=document.getElementById('drumName');dn.style.display='block';
+  const dc=document.getElementById('drumCar');dc.style.display='block';
+  let ticks=0,interval=60;
+  const total=28+Math.floor(Math.random()*14);
+  function tick(){
+    const p=pool[Math.floor(Math.random()*pool.length)];
+    dn.textContent=p.name.toUpperCase();dc.textContent=p.car;ticks++;
+    if(ticks>total*.6)interval=Math.min(interval+18,380);
+    if(ticks>total*.85)interval=Math.min(interval+28,680);
+    if(ticks>=total){
+      const winner=pool[Math.floor(Math.random()*pool.length)];
+      dn.textContent=winner.name.toUpperCase();dc.textContent=winner.car;
+      setTimeout(()=>revealWinner(winner),600);
+    }else{setTimeout(tick,interval);}
   }
   tick();
 }
-
-function revealWinner(w) {
-  winners.push({ id:w.id, name:w.name, car:w.car, phone:w.phone, email:w.email, drawnAt:new Date().toLocaleTimeString() });
-  localStorage.setItem('harlan_prize_winners', JSON.stringify(winners));
-  document.getElementById('winnerName').textContent = w.name.toUpperCase();
-  document.getElementById('winnerCar').textContent  = w.car;
-  document.getElementById('winnerMeta').textContent = (w.phone||'')+(w.phone&&w.email?' · ':'' )+(w.email||'');
-  const box = document.getElementById('winnerBox');
-  box.style.display='block'; setTimeout(()=>box.classList.add('show'),10);
-  renderWinnersLog(); updateExcludeNote();
-  spinning=false; document.getElementById('spinBtn').disabled=false;
+function revealWinner(w){
+  winners.push({id:w.id,name:w.name,car:w.car,phone:w.phone,email:w.email,drawnAt:new Date().toLocaleTimeString()});
+  localStorage.setItem('harlan_winners',JSON.stringify(winners));
+  document.getElementById('winnerName').textContent=w.name.toUpperCase();
+  document.getElementById('winnerCar').textContent=w.car;
+  document.getElementById('winnerMeta').textContent=(w.phone||'')+(w.phone&&w.email?' · ':'')+(w.email||'');
+  const box=document.getElementById('winnerBox');
+  box.style.display='block';setTimeout(()=>box.classList.add('show'),10);
+  renderWinnersLog();updateExcludeNote();
+  spinning=false;document.getElementById('spinBtn').disabled=false;
 }
-
-function renderWinnersLog() {
-  const log=document.getElementById('winnersLog'), list=document.getElementById('winnersList');
-  if (!winners.length) { log.style.display='none'; return; }
+function renderWinnersLog(){
+  const log=document.getElementById('winnersLog'),list=document.getElementById('winnersList');
+  if(!winners.length){log.style.display='none';return;}
   log.style.display='block';
   list.innerHTML=winners.map((w,i)=>`
     <div class="winner-row">
@@ -530,30 +486,25 @@ function renderWinnersLog() {
     </div>`).join('');
   updateExcludeNote();
 }
-
-function removeWinner(i) {
-  winners.splice(i,1);
-  localStorage.setItem('harlan_prize_winners', JSON.stringify(winners));
-  renderWinnersLog(); updateExcludeNote();
+function removeWinner(i){
+  winners.splice(i,1);localStorage.setItem('harlan_winners',JSON.stringify(winners));
+  renderWinnersLog();updateExcludeNote();
 }
-
-function clearWinners() {
-  if (!winners.length) return;
-  if (!confirm('Clear the winners list?')) return;
-  winners=[];
-  localStorage.setItem('harlan_prize_winners', JSON.stringify(winners));
+function clearWinners(){
+  if(!winners.length)return;
+  if(!confirm('Clear the winners list?'))return;
+  winners=[];localStorage.setItem('harlan_winners',JSON.stringify(winners));
   const box=document.getElementById('winnerBox');
-  box.classList.remove('show'); box.style.display='none';
+  box.classList.remove('show');box.style.display='none';
   document.getElementById('drumIdle').style.display='block';
   document.getElementById('drumName').style.display='none';
   document.getElementById('drumCar').style.display='none';
-  renderWinnersLog(); updateExcludeNote();
+  renderWinnersLog();updateExcludeNote();
 }
-
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
-document.addEventListener('keydown', e => {
-  if (e.key==='Enter' && document.getElementById('form-tab').classList.contains('active')) submitEntry();
+document.addEventListener('keydown',e=>{
+  if(e.key==='Enter'&&document.getElementById('form-tab').classList.contains('active'))submitEntry();
 });
 
 init();
